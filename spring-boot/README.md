@@ -9,8 +9,8 @@ Security:
 
 DOCKER:
 --------------------
-./mvnw install dockerfile:build
 
-docker build -t spring-app:dev .
+ mvn install -Dmaven.test.skip=true dockerfile:build
 
-docker run -d --name spring-app -p 8080:8080 spring-app:dev
+docker run -p 8080:8080 -t springio/demo 
+
