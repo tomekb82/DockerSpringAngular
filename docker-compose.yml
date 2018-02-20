@@ -1,0 +1,14 @@
+version: '2' # specify docker-compose version
+
+#services/containers to be run
+services:
+  angular: # name of the first service
+    build: angular/my-app # specify the directory of the Dockerfile
+    ports:
+      - "4200:4200" # specify port forewarding
+
+
+  spring: #name of the second service
+    build: spring-boot/compose # specify the directory of the Dockerfile
+    ports:
+       - "8080:8080" #specify ports forewarding
