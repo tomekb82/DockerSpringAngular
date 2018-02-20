@@ -6,9 +6,17 @@ services:
     build: angular/my-app # specify the directory of the Dockerfile
     ports:
       - "4200:4200" # specify port forewarding
-
-
-  spring: #name of the second service
-    build: spring-boot/compose # specify the directory of the Dockerfile
+  
+  postgres:
+    build: postgreSQL
     ports:
-       - "8080:8080" #specify ports forewarding
+      - "5432:5432"
+ 
+  spring: #name of the second service
+    build: spring-boot # specify the directory of the Dockerfile
+    ports:
+      - "8081:8080" #specify ports forewarding
+    links:
+      - postgres # link this service to the database service
+
+
