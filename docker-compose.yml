@@ -16,6 +16,8 @@ services:
     build: spring-boot # specify the directory of the Dockerfile
     ports:
       - "8081:8080" #specify ports forewarding
+    environment:
+      - "SPRING_DATASOURCE_URL=jdbc:postgresql://postgres/docker"
     links:
       - postgres # link this service to the database service
 
