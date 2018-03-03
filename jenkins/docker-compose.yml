@@ -19,6 +19,7 @@ services:
     - gitlab
 
  gitlab:
+  #image: gitlab_with_user_and_fe_proj
   image: gitlab/gitlab-ce
   restart: always
   networks:
@@ -28,7 +29,7 @@ services:
       # external_url 'https://gitlab.example.com'
       # Add any other gitlab.rb configuration here, each on its own line
   ports:
-    - "8080:8080"
+    - "18081:80"
     - "443:443"
     - "2222:22"
   volumes:
